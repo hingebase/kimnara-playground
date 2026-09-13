@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: cargo
+    directories:
+      - packages/kimnara-playground-builder/rust
+      - packages/kimnara-playground-runner
+    schedule:
+      interval: monthly
+    allow:
+      - dependency-type: all
+    ignore:
+      - dependency-name: rattler*
+    groups:
+      cargo:
+        patterns:
+          - "*"
