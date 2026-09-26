@@ -1,4 +1,5 @@
 [tool.basedpyright]
+failOnWarnings = true
 ignore = ["compiler-explorer"]
 reportUnnecessaryTypeIgnoreComment = "warning"
 strict = ["packages"]
