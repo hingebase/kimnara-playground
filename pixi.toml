@@ -53,6 +53,7 @@ nb064 = ["kimnara", "numba", "nb064"]
 nb065 = ["kimnara", "numba", "nb065"]
 nb066 = ["kimnara", "numba", "nb066"]
 nb067 = ["kimnara", "numba", "nb067"]
+nb068 = ["kimnara", "numba", "nb068"]
 conda = ["conda"]
 
 [feature.conda.dependencies]
@@ -175,7 +176,8 @@ nb063 = { dependencies.numba = "==0.63.1", platforms = ["linux-64", "win-64"] }
 nb064 = { dependencies.numba = "==0.64.0", platforms = ["linux-64", "win-64"] }
 nb065 = { dependencies.numba = "==0.65.1", platforms = ["linux-64", "win-64"] }
 nb066 = { dependencies.numba = "==0.66.0", platforms = ["linux-64", "win-64"] }
-nb067 = { dependencies.numba = "0.67.*", platforms = ["linux-64", "win-64"] }
+nb067 = { dependencies.numba = "==0.67.0", platforms = ["linux-64", "win-64"] }
+nb068 = { dependencies.numba = "0.68.*", platforms = ["linux-64", "win-64"] }
 
 [feature.nb057]
 channels = ["conda-forge", "numba", "https://software.repos.intel.com/python/conda"]
