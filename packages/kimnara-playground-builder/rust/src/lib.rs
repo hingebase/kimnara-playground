@@ -50,8 +50,8 @@ fn inspect() -> PyResult<HashMap<String, HashMap<String, String>>> {
         let pyerr = subprocess::CalledProcessError::new_err((
             output.status.code(),
             ["pixi", "-vvv", "info", "--json"],
-            String::from_utf8(output.stdout).ok(),
-            String::from_utf8(output.stderr).ok(),
+            String::from_utf8_lossy_owned(output.stdout),
+            String::from_utf8_lossy_owned(output.stderr),
         ));
         return Err(pyerr);
     }

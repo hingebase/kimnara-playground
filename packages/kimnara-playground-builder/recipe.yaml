@@ -21,7 +21,7 @@ requirements:
     - ${{ compiler("c") }}
 
     # Recent rust_osx-64 requires macosx_deployment_target_osx-64 >=11
-    - rust >=1.98.0
+    - rust >=1.99.0
 
     - ${{ stdlib("c") }}
     - if: microarch_level | int
