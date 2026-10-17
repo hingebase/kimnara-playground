@@ -6,5 +6,8 @@
 /compiler-explorer
 /dist.zip
 
+# pytest
+__pycache__
+
 # rust-analyzer
 target
