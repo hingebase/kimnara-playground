@@ -8,8 +8,6 @@ updates:
       interval: monthly
     allow:
       - dependency-type: all
-    ignore:
-      - dependency-name: rattler*
     groups:
       cargo:
         patterns:
