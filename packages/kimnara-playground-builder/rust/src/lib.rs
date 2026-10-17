@@ -6,7 +6,7 @@ use std::process::Command;
 use anyhow::Error;
 use pyo3::{PyResult, pymodule};
 use pyo3::exceptions::PyKeyError;
-use rattler_conda_types::Platform;
+use rattler_conda_types::Subdir;
 use rattler_lock::LockFile;
 use rattler_shell::activation::{ActivationVariables, Activator};
 use rattler_shell::shell::{Bash, ShellEnum};
@@ -14,7 +14,7 @@ use serde::Deserialize;
 
 #[derive(Deserialize)]
 struct PlatformInfo {
-    subdir: Platform,
+    subdir: Subdir,
 }
 
 #[derive(Deserialize)]
@@ -65,7 +65,9 @@ fn inspect() -> PyResult<HashMap<String, HashMap<String, String>>> {
         .into_iter()
         .filter(
             |env| env.platforms.iter().find(
-                |platform| platform.subdir == Platform::current(),
+                |platform| Subdir::current().is_some_and(
+                    |subdir| subdir == platform.subdir,
+                ),
             ).is_some() && !EXCLUDE.contains(&env.name.as_str()),
         )
         .map(|env| {
@@ -77,7 +79,10 @@ fn inspect() -> PyResult<HashMap<String, HashMap<String, String>>> {
                 ShellEnum::default()
             };
 
-            Activator::from_path(&env.prefix, shell_type, Platform::current())
+            // It's safe to unwrap since `is_some_and` returns true
+            let platform = Subdir::current().unwrap();
+
+            Activator::from_path(&env.prefix, shell_type, platform)
                 .and_then(|shell| shell.run_activation(variables.clone(), None))
                 .map(|value| (env.name, value))
                 .map_err(|err| rattler::ActivationError::new_err(
@@ -96,7 +101,9 @@ fn numba_versions() -> PyResult<HashMap<String, String>> {
         .environments()
         .filter_map(|(name, env)| if name.starts_with("nb") {
             let (_, packages) = env.packages_by_platform().find(
-                |(platform, _)| platform.subdir() == Platform::current(),
+                |(platform, _)| Subdir::current().is_some_and(
+                    |subdir| subdir == platform.subdir(),
+                ),
             )?;
             if let Some(data) = packages
                 .filter_map(|package| package.as_binary_conda())
