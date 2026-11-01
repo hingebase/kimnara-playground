@@ -85,7 +85,7 @@ channels = ["conda-forge", "https://prefix.dev/github-releases"]
 basedpyright = ">=1.40.2"
 kimnara-playground-builder = { path = "packages/kimnara-playground-builder" }
 pydantic = ">=2.12.4"
-pytest = ">=9.1.1"
+pytest = ">=9.2.0"
 
 [feature.builder.target.linux-64.dependencies]
 pixi = ">=0.76.0,<=0.81.0"
