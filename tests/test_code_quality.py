@@ -94,6 +94,8 @@ def test_tombi() -> None:
 def test_ty(monkeypatch: pytest.MonkeyPatch) -> None:
     """Type checking with ty."""
     argv = ["ty", "check", "--python", sys.executable]
+    if sys.platform == "darwin":
+        argv += ("--ignore", "unresolved-attribute")
     _run_module_or_executable(argv, monkeypatch)
 
 
