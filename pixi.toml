@@ -90,15 +90,15 @@ pytest = ">=9.1.1"
 [feature.builder.target.linux-64.dependencies]
 pixi = ">=0.76.0,<=0.81.0"
 pyrefly = ">=1.4.0"
-ruff = ">=0.17.1"
-tombi = ">=1.8.5"
-ty = ">=0.0.89"
+ruff = ">=0.17.3"
+tombi = ">=1.9.8"
+ty = ">=0.0.95"
 
 [feature.builder.target.osx-64.dependencies]
 pixi = { version = "0.71.*", channel = "https://prefix.dev/github-releases" }
-ruff = { version = ">=0.16.9", channel = "https://prefix.dev/github-releases" }
-tombi = { version = ">=1.8.4", channel = "https://prefix.dev/github-releases" }
-ty = { version = ">=0.0.87", channel = "https://prefix.dev/github-releases" }
+ruff = { version = ">=0.17.3", channel = "https://prefix.dev/github-releases" }
+tombi = { version = ">=1.9.7", channel = "https://prefix.dev/github-releases" }
+ty = { version = ">=0.0.95", channel = "https://prefix.dev/github-releases" }
 
 [feature.builder.target.win-64.dependencies]
 m2-coreutils = "*"
@@ -107,9 +107,9 @@ m2-sed = "*"
 m2-which = "*"
 pixi = ">=0.76.0,<=0.81.0"
 pyrefly = ">=1.4.0"
-ruff = ">=0.17.1"
-tombi = ">=1.8.5"
-ty = ">=0.0.89"
+ruff = ">=0.17.3"
+tombi = ">=1.9.8"
+ty = ">=0.0.95"
 
 [feature.builder.tasks.test]
 cmd = "pytest -Werror"
