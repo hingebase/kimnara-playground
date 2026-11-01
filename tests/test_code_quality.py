@@ -30,9 +30,7 @@ if TYPE_CHECKING:
     from collections.abc import Generator
 
 if sys.platform == "win32":
-    from contextlib import (
-        nullcontext as _astral_context,
-    )
+    from contextlib import nullcontext as _astral_context
 else:
     @contextlib.contextmanager
     def _astral_context(monkeypatch: pytest.MonkeyPatch) -> Generator[object]:
