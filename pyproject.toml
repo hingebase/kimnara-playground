@@ -1,8 +1,7 @@
 [tool.basedpyright]
 failOnWarnings = true
 ignore = ["compiler-explorer"]
-reportUnnecessaryTypeIgnoreComment = "warning"
-strict = ["packages"]
+strict = ["packages", "tests"]
 typeCheckingMode = "off"
 
 [tool.pyrefly]

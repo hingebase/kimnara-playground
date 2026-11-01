@@ -35,7 +35,7 @@ def local_properties(
         try:
             rattler.LockFile.from_path(Path(os.devnull))
         except Exception as e:  # ruff: ignore[blind-except]
-            rattler.exceptions.ParseCondaLockError = type(e)
+            rattler.exceptions.ParseCondaLockError = type(e)  # pyright: ignore[reportAttributeAccessIssue]
 
     versions = {
         k: packaging.version.parse(v)
