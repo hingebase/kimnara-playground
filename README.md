@@ -39,7 +39,7 @@ and C/C++ compilers.
 3. (Windows-only) Install Visual Studio 2026 or [Microsoft C++ Build Tools][3]
 4. Download pre-compiled Compiler Explorer from its [GitHub Actions][4] to the
    root directory of this project
-5. Install [Pixi][5] 0.71.x on macOS, >=0.76,<=0.81 otherwise
+5. Install [Pixi][5] >=0.84.1
 6. `pixi r --locked start`  
    There will be a huge installation for the first run, please be patient.  
    Once installed, the server only takes few seconds to launch.
