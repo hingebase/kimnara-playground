@@ -41,10 +41,10 @@ icc_rt = { channel = "numba" }
 intel-cmplr-lib-rt = "*"
 nodejs = "26.*"
 pixi = ">=0.84.1"
-pyrefly = ">=1.4.0"
-ruff = ">=0.17.3"
-tombi = ">=1.9.8"
-ty = ">=0.0.95"
+pyrefly = ">=1.4.1"
+ruff = ">=0.17.4"
+tombi = ">=1.10.0"
+ty = ">=0.0.99"
 vs_win-64 = ">=2026.1.0"
 
 [environments]
@@ -109,8 +109,8 @@ ty = { workspace = true }
 [feature.builder.target.osx-64.dependencies]
 pixi = { version = ">=0.84.1", channel = "https://prefix.dev/github-releases" }
 ruff = { version = ">=0.17.3", channel = "https://prefix.dev/github-releases" }
-tombi = { version = ">=1.9.7", channel = "https://prefix.dev/github-releases" }
-ty = { version = ">=0.0.95", channel = "https://prefix.dev/github-releases" }
+tombi = { version = ">=1.10.0", channel = "https://prefix.dev/github-releases" }
+ty = { version = ">=0.0.99", channel = "https://prefix.dev/github-releases" }
 
 [feature.builder.target.win-64.dependencies]
 m2-coreutils = "*"
